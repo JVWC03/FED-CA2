@@ -33,8 +33,8 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Festivals",
-      url: "/festivals",
+      title: "Doctors",
+      url: "/doctors",
       icon: IconConfetti,
     },
     {
