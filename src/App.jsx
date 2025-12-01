@@ -10,9 +10,9 @@ import Home from '@/pages/Home';
 
 // Doctor pages
 import DoctorsIndex from '@/pages/doctors/Index';
-// import DoctorsShow from '@/pages/doctors/Show';
+import DoctorsShow from '@/pages/doctors/Show';
 import DoctorsCreate from '@/pages/doctors/Create';
-// import DoctorsEdit from '@/pages/doctors/Edit';
+import DoctorsEdit from '@/pages/doctors/Edit';
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -59,9 +59,9 @@ export default function App() {
 
                   {/* Doctor routes */}
                   <Route path="/doctors" element={<DoctorsIndex />} />
-                  {/* <Route path="/doctors/:id" element={<DoctorsShow loggedIn={loggedIn} />} /> */}
+                  <Route path="/doctors/:id" element={<DoctorsShow loggedIn={loggedIn} />} />
                   <Route path="/doctors/create" element={<DoctorsCreate />} />
-                  {/* <Route path="/doctors/:id/edit" element={<DoctorsEdit />} /> */}
+                  <Route path="/doctors/:id/edit" element={<DoctorsEdit />} />
                 </Routes>
               </div>
             </div>
