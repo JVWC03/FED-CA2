@@ -14,6 +14,12 @@ import DoctorsShow from '@/pages/doctors/Show';
 import DoctorsCreate from '@/pages/doctors/Create';
 import DoctorsEdit from '@/pages/doctors/Edit';
 
+// Patient pages
+import PatientsIndex from '@/pages/patients/Index';
+import PatientsCreate from '@/pages/patients/Create';
+import PatientsEdit from '@/pages/patients/Edit';
+import PatientsShow from '@/pages/patients/Show';
+
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -62,6 +68,12 @@ export default function App() {
                   <Route path="/doctors/:id" element={<DoctorsShow loggedIn={loggedIn} />} />
                   <Route path="/doctors/create" element={<DoctorsCreate />} />
                   <Route path="/doctors/:id/edit" element={<DoctorsEdit />} />
+
+                  {/* Patient routes */}
+                  <Route path="/patients" element={<PatientsIndex />} />
+                  <Route path="/patients/create" element={<PatientsCreate />} />
+                  <Route path="/patients/:id/edit" element={<PatientsEdit />} />
+                  <Route path="/patients/:id" element={<PatientsShow loggedIn={loggedIn} />} />
                 </Routes>
               </div>
             </div>
