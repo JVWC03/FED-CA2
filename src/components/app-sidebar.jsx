@@ -4,6 +4,7 @@ import {
   IconAmbulance,
   IconStethoscope,
   IconCalendarClock,
+  IconReportMedical,
   IconInnerShadowTop
 } from "@tabler/icons-react"
 
@@ -47,9 +48,9 @@ const data = {
       icon: IconCalendarClock,
     },
     {
-      title: "Shows",
-      url: "#",
-      icon: IconDashboard,
+      title: "Diagnoses",
+      url: "/diagnoses",
+      icon: IconReportMedical,
     },
   ],
 }
