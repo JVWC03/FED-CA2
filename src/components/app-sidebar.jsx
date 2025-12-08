@@ -3,10 +3,8 @@ import {
   IconDashboard,
   IconAmbulance,
   IconStethoscope,
-  IconInnerShadowTop,
-  IconTheater,
-  IconMicrophone2,
-  IconMusic
+  IconCalendarClock,
+  IconInnerShadowTop
 } from "@tabler/icons-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -44,14 +42,14 @@ const data = {
       icon: IconAmbulance,
     },
     {
-      title: "Performers",
-      url: "#",
-      icon: IconMicrophone2,
+      title: "Appointments",
+      url: "/appointments",
+      icon: IconCalendarClock,
     },
     {
       title: "Shows",
       url: "#",
-      icon: IconMusic,
+      icon: IconDashboard,
     },
   ],
 }
