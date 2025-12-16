@@ -5,7 +5,8 @@ import {
   IconStethoscope,
   IconCalendarClock,
   IconReportMedical,
-  IconInnerShadowTop
+  IconInnerShadowTop,
+  IconPillFilled
 } from "@tabler/icons-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -51,6 +52,11 @@ const data = {
       title: "Diagnoses",
       url: "/diagnoses",
       icon: IconReportMedical,
+    },
+    {
+      title: "Prescriptions",
+      url: "/prescriptions",
+      icon: IconPillFilled,
     },
   ],
 }

@@ -32,6 +32,12 @@ import DiagnosesCreate from '@/pages/diagnoses/Create';
 import DiagnosisEdit from '@/pages/diagnoses/Edit';
 import DiagnosesShow from '@/pages/diagnoses/Show';
 
+// Prescruption Pages
+import PrescriptionsIndex from '@/pages/prescriptions/Index';
+import PrescriptionsCreate from '@/pages/prescriptions/Create';
+import PrescriptionsEdit from '@/pages/prescriptions/Edit';
+import PrescriptionsShow from '@/pages/prescriptions/Show';
+
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -99,6 +105,11 @@ export default function App() {
                   <Route path="/diagnoses/:id/edit" element={<DiagnosisEdit />} />
                   <Route path="/diagnoses/:id" element={<DiagnosesShow loggedIn={loggedIn} />} />
 
+                  {/* Prescription Routes */}
+                  <Route path="/prescriptions" element={<PrescriptionsIndex />} />
+                  <Route path="/prescriptions/create" element={<PrescriptionsCreate />} />
+                  <Route path="/prescriptions/:id/edit" element={<PrescriptionsEdit />} />
+                  <Route path="/prescriptions/:id" element={<PrescriptionsShow />} />
 
                 </Routes>
               </div>
