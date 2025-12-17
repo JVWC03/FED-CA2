@@ -25,6 +25,7 @@ export default function Index() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetch diagnoses and patients at the same time
         const [diagnosisResponse, patientResponse] = await Promise.all([
           axios.get("https://ca2-med-api.vercel.app/diagnoses", { headers: { Authorization: `Bearer ${token}` }}),
           axios.get("https://ca2-med-api.vercel.app/patients", { headers: { Authorization: `Bearer ${token}` }})
@@ -68,8 +69,10 @@ export default function Index() {
             const patient = patients.find(p => p.id === diagnosis.patient_id);
             return (
               <TableRow key={diagnosis.id}>
+                {/* Show patoents full name if loaded, otherwise show ID */}
                 <TableCell>{patient ? `${patient.first_name} ${patient.last_name}` : diagnosis.patient_id}</TableCell>
                 <TableCell>{diagnosis.condition}</TableCell>
+                {/* Convert UNIX timestamp to readable date */}
                 <TableCell>{diagnosis.diagnosis_date 
                     ? new Date(diagnosis.diagnosis_date * 1000).toLocaleDateString(): ''}</TableCell>
                 {token && (
@@ -89,6 +92,7 @@ export default function Index() {
                       onClick={() => navigate(`/diagnoses/${diagnosis.id}/edit`)}>
                         <Pencil />
                       </Button>
+                      {/* Button used to delete a diagnosis */}
                       <DeleteButton 
                       resource="diagnoses" 
                       id={diagnosis.id} 

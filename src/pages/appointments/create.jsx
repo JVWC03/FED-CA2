@@ -34,6 +34,7 @@ export default function CreateAppointment() {
     fetchData();
   }, [token]);
 
+  // Updates the form state whenever an input field changes
   const handleChange = (e) => {
   let value = e.target.value;
   
@@ -47,7 +48,7 @@ export default function CreateAppointment() {
   });
 };
 
-
+  // Sends a POST request to the API to create a new appointment
   const createAppointment = async () => {
   const options = {
     method: "POST",

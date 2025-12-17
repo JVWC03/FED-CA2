@@ -29,6 +29,7 @@ export default function CreateDiagnosis() {
     fetchPatients();
   }, [token]);
 
+  // Updates the form state whenever an input field changes
   const handleChange = (e) => {
   let value = e.target.value;
 
@@ -42,7 +43,7 @@ export default function CreateDiagnosis() {
   });
 };
 
-
+ // Sends a POST request to the API to create a new diagnosis
   const createDiagnosis = async () => {
   const options = {
     method: "POST",

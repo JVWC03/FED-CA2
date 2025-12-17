@@ -23,6 +23,7 @@ export default function Index() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
+  // Fetch doctors prescriptions and patients at the same time
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -77,6 +78,7 @@ export default function Index() {
 
             return (
               <TableRow key={prescription.id}>
+                {/* Show patients/doctors full name if loaded, otherwise show ID */}
                 <TableCell>
                   {patient ? `${patient.first_name} ${patient.last_name}` : prescription.patient_id}
                 </TableCell>
@@ -87,6 +89,7 @@ export default function Index() {
 
                 <TableCell>{prescription.medication}</TableCell>
 
+                {/* Convert UNIX timestamp to readable date */}
                 <TableCell>
                     {prescription.start_date
                         ? new Date(prescription.start_date * 1000).toLocaleDateString(): ""}
@@ -118,6 +121,7 @@ export default function Index() {
                         <Pencil />
                       </Button>
 
+                      {/* Button used to delete a prescription */}
                       <DeleteButton
                         resource="prescriptions"
                         id={prescription.id}

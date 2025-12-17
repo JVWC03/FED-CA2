@@ -27,6 +27,7 @@ export default function Index() {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
+        // Fetch appointments doctors and patients at the same time
         const [appointmentResponse, doctorResponse, patientResponse] = await Promise.all([
           axios.get("https://ca2-med-api.vercel.app/appointments", { headers: { Authorization: `Bearer ${token}` }}),
           axios.get("https://ca2-med-api.vercel.app/doctors", { headers: { Authorization: `Bearer ${token}` }}),
@@ -82,6 +83,7 @@ export default function Index() {
                 <TableCell>
                   {doctor ? `${doctor.first_name} ${doctor.last_name}` : appointment.doctor_id}
                 </TableCell>
+                {/* Convert UNIX timestamp to readable date */}
                 <TableCell>{new Date(appointment.appointment_date * 1000).toLocaleDateString()}</TableCell>
 
                 {token && (
@@ -105,6 +107,7 @@ export default function Index() {
                         <Pencil />
                       </Button>
 
+                    {/* Button used to delete an appointment */}
                       <DeleteButton
                         resource="appointments"
                         id={appointment.id}

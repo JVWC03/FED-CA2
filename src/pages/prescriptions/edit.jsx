@@ -78,6 +78,7 @@ export default function EditPrescription() {
     });
   };
 
+  // Sends a PUT request to the API to update a prescription
   const updatePrescription = async () => {
     const options = {
       method: "PATCH",

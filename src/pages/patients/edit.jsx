@@ -53,6 +53,7 @@ export default function Edit() {
     });
   };
 
+  // Sends a PUT request to the API to update a patitent
   const updatePatient = async () => {
     const options = {
       method: "PATCH",

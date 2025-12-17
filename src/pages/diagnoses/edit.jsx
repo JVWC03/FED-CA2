@@ -52,6 +52,7 @@ export default function EditDiagnosis() {
     });
   };
 
+  // Sends a PUT request to the API to update a diagnosis
   const updateDiagnosis = async () => {
     try {
       const response = await axios.patch(`https://ca2-med-api.vercel.app/diagnoses/${id}`, form, {

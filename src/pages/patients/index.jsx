@@ -78,6 +78,7 @@ export default function Index() {
         <TableCell>{patient.first_name}</TableCell>
         <TableCell>{patient.last_name}</TableCell>
         {/* <TableCell>{patient.date_of_birth}</TableCell> */}
+        {/* Convert UNIX timestamp to readable date */}
         <TableCell>{new Date(patient.date_of_birth * 1000).toLocaleDateString()}</TableCell>
         <TableCell>{patient.email}</TableCell>
         <TableCell>{patient.phone}</TableCell>

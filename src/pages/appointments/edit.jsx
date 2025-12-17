@@ -52,6 +52,7 @@ export default function EditAppointment() {
     });
   };
 
+  // Sends a PUT request to the API to update an appointment
   const updateAppointment = async () => {
   const options = {
     method: "PATCH",

@@ -38,6 +38,7 @@ export default function PrescriptionsShow() {
     fetchData();
   }, [id, token]);
 
+  // Find the patients doctors and diagnoses linked to this prescription using IDs
   const patient = patients.find(patient => patient.id === prescription.patient_id);
   const doctor = doctors.find(doctor => doctor.id === prescription.doctor_id);
   const diagnosis = diagnoses.find(d => d.id === prescription.diagnosis_id);

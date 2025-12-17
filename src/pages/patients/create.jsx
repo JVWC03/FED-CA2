@@ -17,6 +17,7 @@ export default function Create() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
+  // Updates the form state whenever an input field changes
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -24,6 +25,7 @@ export default function Create() {
     });
   };
 
+  // Sends a POST request to the API to create a new patient
   const createPatient = async () => {
     const options = {
       method: "POST",

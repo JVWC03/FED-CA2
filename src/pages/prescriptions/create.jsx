@@ -42,6 +42,7 @@ export default function CreatePrescription() {
     fetchData();
   }, [token]);
 
+  // Updates the form state whenever an input field changes
   const handleChange = (e) => {
     let value = e.target.value;
 
@@ -59,6 +60,7 @@ export default function CreatePrescription() {
     });
   };
 
+  // Sends a POST request to the API to create a new presceription
   const createPrescription = async () => {
     const options = {
       method: "POST",
